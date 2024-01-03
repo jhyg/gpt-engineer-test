@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+
+  generate-order:
+    tty: true
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    image: ghcr.io/jinyoung/gpt-engineer:v5
+#    command: ["-sh"]
+    volumes:
+      - ../order:/project
+  generate-inventory:
+    tty: true
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    image: ghcr.io/jinyoung/gpt-engineer:v5
+#    command: ["-sh"]
+    volumes:
+      - ../inventory:/project

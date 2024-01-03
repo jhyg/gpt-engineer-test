@@ -1,0 +1,29 @@
+Please implement for this Event Storming Model:
+
+{"_type":"BoundedContext","name":"inventory","aggregates":[{"_type":"Aggregate","name":"Inventory","aggregateRoot":{"_type":"AggregateRoot","fieldDescriptors":[{"_type":"FieldDescriptor","name":"productId","className":"String"},{"_type":"FieldDescriptor","name":"stockRemain","className":"Integer"}]},"events":[{"_type":"Event","name":"InventoryUpdated","fieldDescriptors":[{"_type":"FieldDescriptor","name":"productId","className":"String"},{"_type":"FieldDescriptor","name":"stockRemain","className":"Long"}]}],"commands":[]}],"policies":[{"_type":"Policy","name":"order placed","fieldDescriptors":[]}]}
+
+
+I want to utilize following techniques:
+
+- clean architecture
+- spring-boot3
+- spring-data-rest
+- JPA (must use package jakarta.persistence.* instead of javax.persistence.*)
+- H2 DB
+- Lombok
+- Kafka with spring-cloud-streams library 
+- JUnit Test
+
+
+SELF-CRITICISM: 
+ - when you create pom.xml, USE correct parent project to spring boot 3
+ - when you create pom.xml, you MUST specify the version: 3.1.3 ONLY for the spring-cloud-streams
+ - Please generate start from pom.xml
+
+
+when you create execution shell (run.sh), please add '--no-transfer-progress' option not to output transfer progress if there's mvn command:
+
+```
+mvn [command] --no-transfer-progress
+```
+
